@@ -7,11 +7,11 @@ module.exports = async (ctx, next) => {
     ''
   );
 
-  assert(token, 401, '请先登录');
+  ctx.assert(token, 401, '请先登录');
 
   ctx.state.user = jwt.verify(token, secret);
 
-  assert(ctx.state.user, 401, '请先登录');
+  ctx.assert(ctx.state.user, 401, '请先登录');
 
   await next();
 };

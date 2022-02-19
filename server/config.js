@@ -3,10 +3,10 @@ module.exports = {
   db: {
     host: '127.0.0.1',
     port: 27017,
-    name: 'test',
-    user: 'test',
-    password: '123456',
+    name: 'customer',
+    user: 'management',
+    password: 'mLeiI39J3ljd',
   },
-  code: 'test',
-  secret: 'jwtcode',
+  code: 'zuoyouyyds',
+  secret: 'mncvjheJKdfkKe',
 };

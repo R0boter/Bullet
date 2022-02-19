@@ -2,7 +2,7 @@ const Router = require('koa-router');
 const register = new Router();
 const { code, secret } = require('../../config');
 const jwt = require('jsonwebtoken');
-const schema = require('../../model/web/user');
+const schema = require('../../model/web/User');
 
 register.post('/', async (ctx) => {
   const { username, password, safeCode } = ctx.request.body;
