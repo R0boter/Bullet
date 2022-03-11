@@ -1,9 +1,9 @@
 import http from './http';
 
-export const LoginApi = (model) => http.post('/login', model);
+export const LoginApi = (model) => http.post('/admin/login', model);
 
-export const RegisterApi = (model) => http.post('/register', model);
+export const RegisterApi = (model) => http.post('/admin/register', model);
 
-export const UserApi = () => http.get('/user');
+export const UserApi = () => http.get('/admin/user');
 
-export const UserEditApi = (model) => http.put('/user', model);
+export const UserEditApi = (model) => http.put('/admin/user', model);

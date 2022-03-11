@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const schema = require('../../model/web/user');
+const schema = require('../../model/admin/user');
 const { secret } = require('../../config');
 const { assert } = require('console');
 const login = Router();

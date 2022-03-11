@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const router = new Router();
-const webRouter = require('./web');
+const adminRouter = require('./admin');
 
-router.use('/web', webRouter.routes());
+router.use('/api/admin', adminRouter.routes());
 
 module.exports = router;
