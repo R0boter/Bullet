@@ -22,10 +22,10 @@ export default function Main() {
     <Layout className="content" style={{ height: '100vh' }}>
       <Header style={{ width: '100%' }}>
         <Menu theme="dark" mode="horizontal" selectedKeys={[menuKey]}>
-          <Menu.Item key="/">
-            <Link to="/">主页</Link>
+          <Menu.Item key="/admin">
+            <Link to="/admin">主页</Link>
           </Menu.Item>
-          <Menu.Item key="user">
+          <Menu.Item key="/admin/user">
             <Link to="user">用户中心</Link>
           </Menu.Item>
           <Menu.Item

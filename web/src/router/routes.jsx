@@ -8,7 +8,7 @@ const User = lazy(() => import('pages/User'));
 
 const Routes = () => [
   {
-    path: '/',
+    path: '/admin',
     element: <Main />,
     children: [
       {

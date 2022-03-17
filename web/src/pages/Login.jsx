@@ -9,7 +9,7 @@ const Login = () => {
   const onFinish = (values) => {
     LoginApi(values).then((res) => {
       localStorage.__web_token = res.data.token;
-      navigate('/');
+      navigate('/admin');
     });
   };
   return (

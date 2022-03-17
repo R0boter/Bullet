@@ -17,7 +17,7 @@ register.post('/', async (ctx) => {
   const token = jwt.sign({ id: user._id, username }, secret, {
     expiresIn: '1d',
   });
-  ctx.body = { token };
+  ctx.body = { token, message: '注册成功！' };
 });
 
 module.exports = register;
