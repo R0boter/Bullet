@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import logo from '../assets/img/logo.png';
 
-const { Header, Content } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 
 export default function Main() {
   const [menuKey, setMenuKey] = useState('');
@@ -19,9 +20,16 @@ export default function Main() {
     navigate('/login');
   };
   return (
-    <Layout className="content" style={{ height: '100vh' }}>
-      <Header style={{ width: '100%' }}>
-        <Menu theme="dark" mode="horizontal" selectedKeys={[menuKey]}>
+    <Layout>
+      <Sider style={{ height: '100vh' }} breakpoint="lg" collapsedWidth="0">
+        <div
+          style={{
+            height: '32px',
+            margin: '16px',
+            background: 'rgba(255, 255, 255, 0.2)',
+          }}
+        ></div>
+        <Menu theme="dark" mode="inline" selectedKeys={[menuKey]}>
           <Menu.Item key="/admin">
             <Link to="/admin">主页</Link>
           </Menu.Item>
@@ -35,10 +43,21 @@ export default function Main() {
             <p onClick={Logout}>退出登录</p>
           </Menu.Item>
         </Menu>
-      </Header>
-      <Content style={{ padding: '10px 30px', background: '#fff' }}>
-        <Outlet />
-      </Content>
+      </Sider>
+      <Layout>
+        <Header style={{ padding: 0 }} />
+        <Content style={{ padding: '10px 30px', background: '#fff' }}>
+          <div
+            className="site-layout-background"
+            style={{ padding: 24, minHeight: 360 }}
+          >
+            <Outlet />
+          </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>
+          Ant Design ©2018 Created by Ant UED
+        </Footer>
+      </Layout>
     </Layout>
   );
 }
