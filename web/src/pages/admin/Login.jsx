@@ -9,7 +9,7 @@ const Login = () => {
   const onFinish = (values) => {
     LoginApi(values).then((res) => {
       localStorage.__web_token = res.data.token;
-      navigate('/admin');
+      navigate('/admin/home');
     });
   };
   return (
@@ -32,7 +32,7 @@ const Login = () => {
           </Form.Item>
 
           <Form.Item>
-            <Link to="/register">还没账号？立即注册</Link>
+            <Link to="/admin/register">还没账号？立即注册</Link>
           </Form.Item>
 
           <Form.Item>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-import logo from '../assets/img/logo.png';
+import logo from 'assets/img/logo.png';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -11,13 +11,13 @@ export default function Main() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.__web_token) {
-      navigate('/login');
+      navigate('/admin/login');
     }
     setMenuKey(pathname);
   }, [pathname]);
   const Logout = () => {
     localStorage.removeItem('__web_token');
-    navigate('/login');
+    navigate('/admin/login');
   };
   return (
     <Layout>
@@ -30,10 +30,10 @@ export default function Main() {
           }}
         ></div>
         <Menu theme="dark" mode="inline" selectedKeys={[menuKey]}>
-          <Menu.Item key="/admin">
-            <Link to="/admin">主页</Link>
+          <Menu.Item key="/admin/home">
+            <Link to="/admin/home">主页</Link>
           </Menu.Item>
-          <Menu.Item key="/admin/user">
+          <Menu.Item key="/admin/home/user">
             <Link to="user">用户中心</Link>
           </Menu.Item>
           <Menu.Item

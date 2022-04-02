@@ -9,7 +9,7 @@ const Register = () => {
   const onFinish = (values) => {
     RegisterApi(values).then((res) => {
       localStorage.__web_token = res.data.token;
-      navigate('/admin');
+      navigate('/admin/home');
     });
   };
   return (
