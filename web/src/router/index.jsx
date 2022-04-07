@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
+import { HashRouter as Router, useRoutes } from 'react-router-dom';
 import Loading from 'components/Loading';
 import routes from './routes';
 
